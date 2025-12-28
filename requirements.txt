@@ -4,6 +4,6 @@ numpy==1.26.4
 scikit-learn==1.4.2
 joblib==1.4.2
 matplotlib==3.8.4
-shap==0.46.0
-lightgbm==4.5.0
 scipy==1.11.4
+lightgbm==4.5.0
+shap==0.46.0
