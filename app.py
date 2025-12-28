@@ -1,4 +1,3 @@
-def main():
 # app.py
 import io
 import time
