@@ -1,3 +1,4 @@
+def main():
 # app.py
 import io
 import time
@@ -25,6 +26,12 @@ from sklearn.metrics import (
 import joblib
 
 import lightgbm as lgb
+import os, sys, traceback
+import streamlit as st
+
+st.write("✅ App started")   # để biết code đã chạy tới đây
+st.write("Python:", sys.version)
+st.write("PID:", os.getpid())
 
 # Optional (SHAP may be heavy)
 try:
@@ -536,3 +543,11 @@ else:
             "feature_count_after": tr.feature_count_after,
             "train_df_shape": st.session_state.last_train_df_shape,
         })
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        st.error("App crashed:")
+        st.exception(e)
+        print("CRASH:", traceback.format_exc())
+        raise
